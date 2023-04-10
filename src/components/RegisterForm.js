@@ -8,8 +8,15 @@ function RegisterForm(props){
     const [name,setName] = useState("");
     const [birth,setBirth] = useState("");
     const [bio,setBio] = useState("");
-    const [image,setImage] = useState("");
+    const [imageName,setImageName] = useState("");
+    const [imageFile,setImageFile] = useState(perfil);
     const [address,setAddress] = useState("");
+
+    function onImageChange(e){
+        const file = e.target.files[0];
+        setImageName(file.name)
+        setImageFile(URL.createObjectURL(file))
+    }
 
     function onNameChange(e){
         setName(e.target.value)
@@ -28,11 +35,12 @@ function RegisterForm(props){
 
     function onFormSubmit(e){
         e.preventDefault();
-        props.changeValues(image,name,birth,address,bio);
+        props.changeValues(imageFile,name,birth,address,bio);
         setAddress("");
         setBio("");
         setBirth("");
-        setImage("");
+        setImageName("");
+        setImageFile(perfil);
         setName("");
     }
 
@@ -41,8 +49,8 @@ function RegisterForm(props){
         <div className={styles.formContainer} onSubmit={onFormSubmit}>
             <form className={styles.form}>
                 <div className={styles.imageLabel}>Foto Perfil</div>
-                <label  for="imageInput" className={styles.imageLabel}><img className={styles.profileImage} src={perfil} alt="profile"></img></label>
-                <input type="file" id="imageInput" className={styles.imageInput} value={image} alt="form"></input>
+                <label  htmlFor="imageInput" className={styles.imageLabel}><img className={styles.profileImage} src={imageFile} alt="profile"></img></label>
+                <input type="file" id="imageInput" onChange={onImageChange} className={styles.imageInpu} filename={imageName} alt="form"></input>
 
                 <label>Nome</label>
                 <input type="text" value={name} onChange={onNameChange}></input>

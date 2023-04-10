@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import RegisterForm from "./RegisterForm"
 
 import styles from './Profile.module.css'
-
+import perfil from '../Assets/Images/perfil.png'
 
 function Profile(){
 
@@ -10,11 +10,11 @@ function Profile(){
     const [birth,setBirth] = useState("");
     const [bio,setBio] = useState("");
     const [address,setAddress] = useState("");
-    const [image,setImage] = useState("");
+    const [imageFile,setImageFile] = useState(perfil);
 
-    function changeValues(image,name,birth,address,bio){
-        if(image !== ""){
-            setImage(image);
+    function changeValues(imageFile,name,birth,address,bio){
+        if(imageFile !== ""){
+            setImageFile(imageFile);
         }
         if(name !== ""){
             setName(name);
@@ -35,10 +35,11 @@ function Profile(){
         <div className={styles.profileContainer}>
             
             <div className={styles.profile}>
-                <div>Foto Perfil:</div>
-                <div><img src={image} alt="perfil"></img></div>
-
-                <div>Nome: {name}</div>
+                <div className={styles.profileImageLabelContainer}>
+                    <div>Foto Perfil:</div>
+                    <div><img src={imageFile} className={styles.profileImage} alt="perfil"></img></div>
+                </div>
+                   <div>Nome: {name}</div>
                 
 
                 <div>Nascimento: {birth}</div>

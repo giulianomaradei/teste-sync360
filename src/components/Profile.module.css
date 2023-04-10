@@ -20,3 +20,16 @@
     padding: 2rem;
 }
 
+
+.profileImage{
+    border-radius: 100vw;
+    height: 7rem;
+    width: 7rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.profileImageLabelContainer{
+    align-self: center;
+}
+
