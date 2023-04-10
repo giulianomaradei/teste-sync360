@@ -1,0 +1,80 @@
+.formContainer button, input,textarea {
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    resize: none;
+}
+
+
+.formContainer{
+    font-family:roboto;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:left;
+
+    width: 30rem;
+    max-width: 80vw;
+    background-color: #2E3840;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.form input, .form textarea{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 5px;
+    cursor: text;
+    padding: 1%;
+}
+
+.form label{
+    text-align: left;
+}
+
+.profileImage{
+    border-radius: 100vw;
+    height: 7rem;
+    width: 7rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.imageLabel{
+    align-self: center;
+}
+
+.imageInput{
+    display: none;
+}
+
+.createButton{
+    background-color: #10a37f;
+    cursor: pointer;
+    width: 70%;
+    height: 2rem;
+    margin: 3%;
+    align-self: center;
+    border-radius: 7px;
+}
+.createButton:hover{
+    background-color: #0e8c6c;
+    transition: .3s;
+}
+
+.errorMessage{
+    color: red;
+    align-self: center;
+}
