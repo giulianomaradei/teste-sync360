@@ -1,3 +1,7 @@
+.app{
+  font-family: roboto;
+}
+
 @font-face {
     font-family: "Roboto";   /*Can be any text*/
     src: local("RobotoMono-Regular"),

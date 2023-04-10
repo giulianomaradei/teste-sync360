@@ -1,12 +1,14 @@
 
-import './App.css';
-import RegisterForm from './components/RegisterForm';
 import './Assets/Fonts/RobotoMono-Regular.ttf'
+import Profile from './components/Profile';
+import styles from './App.module.css'
+
+
 
 function App() {
   return (
-    <div >
-      <RegisterForm></RegisterForm>
+    <div className={styles.app}>
+      <Profile></Profile>
     </div>
   );
 }

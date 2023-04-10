@@ -1,0 +1,22 @@
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 1rem; 
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:left;
+
+    width: 30rem;
+    max-width: 80vw;
+    background-color: #2E3840;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+}
+

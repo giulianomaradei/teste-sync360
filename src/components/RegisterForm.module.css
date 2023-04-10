@@ -7,19 +7,8 @@
     resize: none;
 }
 
-
-.formContainer{
-    font-family:roboto;
-    color: white;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
 .form{
+    font-family:roboto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,6 +19,8 @@
     background-color: #2E3840;
     border-radius: 10px;
     padding: 2rem;
+    color: white;
+
 }
 
 .form input, .form textarea{
