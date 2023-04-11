@@ -19,6 +19,7 @@
     background-color: #2E3840;
     border-radius: 10px;
     padding: 2rem;
+    box-sizing:border-box;
     color: white;
 
 }

@@ -50,7 +50,7 @@ function RegisterForm(props){
             <form className={styles.form}>
                 <div className={styles.imageLabel}>Foto Perfil</div>
                 <label  htmlFor="imageInput" className={styles.imageLabel}><img className={styles.profileImage} src={imageFile} alt="profile"></img></label>
-                <input type="file" id="imageInput" onChange={onImageChange} className={styles.imageInpu} filename={imageName} alt="form"></input>
+                <input type="file" id="imageInput" accept=".png,.jpeg,.webp" onChange={onImageChange} className={styles.imageInpu} filename={imageName} alt="form"></input>
 
                 <label>Nome</label>
                 <input type="text" value={name} onChange={onNameChange}></input>
@@ -64,7 +64,7 @@ function RegisterForm(props){
                 <label>Biografia</label>
                 <textarea value={bio} onChange={onBioChange}></textarea>
 
-                <button type="Aplicar Mudanças" className={styles.createButton}>Criar</button>
+                <button type="Aplicar Mudanças" className={styles.createButton}>Aplicar Mudanças</button>
             </form>
         </div>
     )

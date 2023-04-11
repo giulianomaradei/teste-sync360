@@ -39,14 +39,14 @@ function Profile(){
                     <div>Foto Perfil:</div>
                     <div><img src={imageFile} className={styles.profileImage} alt="perfil"></img></div>
                 </div>
-                   <div>Nome: {name}</div>
                 
+                <div><span className={styles.infoText}>Nome: </span>{name}</div>
 
-                <div>Nascimento: {birth}</div>
+                <div><span className={styles.infoText}>Nascimento: </span>{birth}</div>
 
-                <div>Endereço: {address}</div>
+                <div><span className={styles.infoText}>Endereço: </span>{address}</div>
 
-                <div>Biografia: {bio}</div>
+                <div><span className={styles.infoText}>Biografia: </span>{bio}</div>
             </div>
             <RegisterForm changeValues={changeValues}></RegisterForm>   
         </div>
