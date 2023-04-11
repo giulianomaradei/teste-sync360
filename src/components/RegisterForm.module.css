@@ -56,7 +56,7 @@
     background-color: #10a37f;
     cursor: pointer;
     width: 70%;
-    height: 2rem;
+    height: fit-content;
     margin: 3%;
     align-self: center;
     border-radius: 7px;
