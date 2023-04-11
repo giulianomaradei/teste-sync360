@@ -4,8 +4,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   
-  background: url('./Assets/Images/texture.png') repeat;
+  padding: 2% 0;
+
+  
+  /* background: url('./Assets/Images/texture.png') repeat; */
 }
 
 @font-face {

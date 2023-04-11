@@ -32,6 +32,10 @@
     padding: 1%;
 }
 
+.title{
+    align-self: center;
+}
+
 .form label{
     text-align: left;
 }

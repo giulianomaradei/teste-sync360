@@ -4,13 +4,22 @@
     justify-content: center;
     align-items:center;
     gap: 1rem; 
+
+    width: 30rem;
+    max-width: 80vw;
+    background-color: #2E3840;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-sizing:border-box;
+
+    position: relative;
 }
 
 .profile{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items:left;
+
 
     width: 30rem;
     max-width: 80vw;
@@ -21,21 +30,46 @@
     box-sizing:border-box;
 }
 
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+.title{
+    align-self: center;
+    text-align: center;
+}
 
 .profileImage{
     border-radius: 100vw;
     height: 7rem;
     width: 7rem;
     align-self: center;
-    cursor: pointer;
 }
 
 .profileImageLabelContainer{
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .infoText{
     font-weight: bold;
-    font-size: clamp(18px,calc(1.125rem + ((1vw - 7.68px) * 0.5208)),24px);
+    font-size: clamp(0.875rem, 0.8056rem + 0.3704vw, 1.25rem);
 }
+
+.logout{
+    position: absolute;
+    height: 10%;
+    padding: 3%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+
 

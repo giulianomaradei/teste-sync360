@@ -1,0 +1,109 @@
+.auth{
+    font-family:roboto ;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:left;
+
+    width: 30rem;
+    max-width: 80vw;
+    background-color: #2E3840;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.login input{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 5px;
+    cursor: text;
+    padding: 1%;
+}
+
+.login label{
+    text-align: left;
+}
+
+.errorMessage{
+    color: red;
+    align-self: center;
+}
+
+.signInButon{
+    background-color: #10a37f;
+    cursor: pointer;
+    width: 70%;
+    height: 2rem;
+    margin: 3%;
+    align-self: center;
+    border-radius: 7px;
+}
+.signInButon:hover{
+    background-color: #0e8c6c;
+    transition: .3s;
+}
+
+.orParagraph{
+    align-self: center;
+}
+
+
+.googleButton{
+    margin: 3%;
+    background-image: url('../Assets/Images/GoogleButton/btn_google_signin_dark_normal_web@2x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3rem;
+    width: 12rem;
+
+    align-self: center;
+        
+    background-color: #2E3840;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;  
+}
+
+.googleButton:hover{
+    background-image: url('../Assets/Images/GoogleButton/btn_google_signin_dark_focus_web@2x.png');
+}
+.googleButton:active{
+    background-image: url('../Assets/Images/GoogleButton/btn_google_signin_dark_pressed_web@2x.png');
+}
+
+.dontHaveAccountButton{
+    background-color: transparent;
+    align-self: flex-start;
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+.auth button{
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;  
+}

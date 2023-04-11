@@ -1,54 +1,30 @@
-import React,{useState} from "react";
-import RegisterForm from "./RegisterForm"
+import React from "react";
 
 import styles from './Profile.module.css'
-import perfil from '../Assets/Images/perfil.png'
+import logout from '../Assets/Images/logout.png'
 
-function Profile(){
+function Profile(props){
 
-    const [name,setName] = useState("");
-    const [birth,setBirth] = useState("");
-    const [bio,setBio] = useState("");
-    const [address,setAddress] = useState("");
-    const [imageFile,setImageFile] = useState(perfil);
+    const imageFile = props.imageFile;
+    const name = props.name;
+    const birth = props.birth;
+    const address = props.address;
+    const bio = props.bio;
 
-    function changeValues(imageFile,name,birth,address,bio){
-        if(imageFile !== ""){
-            setImageFile(imageFile);
-        }
-        if(name !== ""){
-            setName(name);
-        }
-        if(birth !== ""){
-            setBirth(birth);
-        }
-        if(address !== ""){
-            setAddress(address);
-        }
-        if(bio !== ""){
-            setBio(bio);
-        }
-
-    }
 
     return(
         <div className={styles.profileContainer}>
-            
-            <div className={styles.profile}>
-                <div className={styles.profileImageLabelContainer}>
-                    <div>Foto Perfil:</div>
-                    <div><img src={imageFile} className={styles.profileImage} alt="perfil"></img></div>
+            <h1 className={styles.title}>Dados</h1>
+            <div className={styles.infoContainer}>
+                <div>
+                    <div><span className={styles.infoText}>Nome: </span>{name}</div>
+                    <div><span className={styles.infoText}>Nascimento: </span>{birth}</div>
+                    <div><span className={styles.infoText}>Endereço: </span>{address}</div>
+                    <div><span className={styles.infoText}>Biografia: </span>{bio}</div> 
                 </div>
-                
-                <div><span className={styles.infoText}>Nome: </span>{name}</div>
-
-                <div><span className={styles.infoText}>Nascimento: </span>{birth}</div>
-
-                <div><span className={styles.infoText}>Endereço: </span>{address}</div>
-
-                <div><span className={styles.infoText}>Biografia: </span>{bio}</div>
+                <div><img className={styles.profileImage} src={imageFile} alt="perfil"></img></div>
             </div>
-            <RegisterForm changeValues={changeValues}></RegisterForm>   
+            <div><img className={styles.logout} src={logout} onClick={props.logoutHandler} alt="logout"></img></div>
         </div>
         
     )
