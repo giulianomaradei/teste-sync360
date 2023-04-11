@@ -24,10 +24,16 @@ function App() {
   const [imageFile,setImageFile] = useState(perfil);
 
   async function logoutHandler(){
-    signOut(auth);
+    await signOut(auth);
     setLogged(false);
     setUserLogged("");
-    console.log("Teste")
+  
+    setName("");
+    setBirth("");
+    setBio("");
+    setAddress("");
+    setImageFile(perfil)
+
   }
 
   async function changeValues(updatedValues){
@@ -84,8 +90,8 @@ function App() {
         setBio(userData.bio)
       }
 
-      if(userData.imageUrl !== undefined){
-        setImageFile(userData.imageUrl)
+      if(userData.imageFile !== undefined){
+        setImageFile(userData.imageFile)
       }
 
     } else {

@@ -26,28 +26,35 @@ function Authentication(props){
         console.log(errorCode);
 
         if(errorCode === "auth/invalid-email"){
-            setErrorMessage("Invalid E-mail")
+            setErrorMessage("E-mail inválido")
             setTimeout(()=>{
                 setErrorMessage("");
             },3000)
         }
 
         if(errorCode === "auth/wrong-password"){
-            setErrorMessage("Wrong E-mail or Password")
+            setErrorMessage("E-mail ou senha inválidos")
             setTimeout(()=>{
                 setErrorMessage("");
             },3000)
         }
 
         if(errorCode === "auth/email-already-in-use"){
-            setErrorMessage("E-mail already in use")
+            setErrorMessage("E-mail já está em uso")
             setTimeout(()=>{
                 setErrorMessage("");
             },3000)
         }
 
         if(errorCode === "not matching passwords"){
-            setErrorMessage("Not Matching Passwords")
+            setErrorMessage("Senhas não coincidem")
+            setTimeout(()=>{
+                setErrorMessage("");
+            },3000)
+        }
+
+        if(errorCode === "auth/user-not-found"){
+            setErrorMessage("Usuario Não Encontrado")
             setTimeout(()=>{
                 setErrorMessage("");
             },3000)
