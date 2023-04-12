@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {auth,googleProvider} from '../Config/firebase';
-import {createUserWithEmailAndPassword,getRedirectResult,signInWithEmailAndPassword,signInWithRedirect,signInWithPopup,signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword,getRedirectResult,signInWithEmailAndPassword,signInWithRedirect} from 'firebase/auth'
 
 import styles from './Authentication.module.css'
 
@@ -22,6 +22,7 @@ function Authentication(props){
             console.log(result.user)
             props.userLoggedHandler(result.user.uid) 
         });
+        // eslint-disable-next-line
     },[]);
 
 
@@ -125,30 +126,30 @@ function Authentication(props){
 
     const loginContent = 
             <div className={styles.login}> 
-                <h1>Sign In</h1>
+                <h1>Entrar</h1>
                 <label>Email</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                <label>Password</label>
+                <label>Senha</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <div className={styles.errorMessage}>{errorMessage}</div>
-                <button onClick={signIn} className={styles.signInButon}> Sign In</button>
+                <button onClick={signIn} className={styles.signInButon}> Entrar</button>
                 <div className={styles.orParagraph}> or </div>
                 <button className={styles.googleButton} onClick={signInWithGoogle}></button>
-                <button className={styles.dontHaveAccountButton} onClick={viewChangeHandler}>Don't have an account?</button>
+                <button className={styles.dontHaveAccountButton} onClick={viewChangeHandler}>Não possui uma conta?</button>
             </div>
             
     const registerContent = 
             <div className={styles.login}> 
-                <h1>Register</h1>
+                <h1>Registro</h1>
                 <label>Email</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                <label>Password</label>
+                <label>Senha</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                <label>Confirm Password</label>
+                <label>Confirme a senha</label>
                 <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
                 <div className={styles.errorMessage}>{errorMessage}</div>
-                <button onClick={signUp} className={styles.signInButon}> Sign Up</button>
-                <button className={styles.dontHaveAccountButton} onClick={viewChangeHandler}>Already have an account?</button>
+                <button onClick={signUp} className={styles.signInButon}> Criar conta</button>
+                <button className={styles.dontHaveAccountButton} onClick={viewChangeHandler}>Já possui uma conta?</button>
             </div>
     ;
 
