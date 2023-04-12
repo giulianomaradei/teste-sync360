@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {auth,googleProvider} from '../Config/firebase';
 import {createUserWithEmailAndPassword,getRedirectResult,signInWithEmailAndPassword,signInWithRedirect,signInWithPopup,signOut} from 'firebase/auth'
 
@@ -12,6 +12,14 @@ function Authentication(props){
     const [view,setView] = useState(true);
 
     const [errorMessage,setErrorMessage] = useState("");
+
+    useEffect(()=>{
+        getRedirectResult(auth).then((result)=>{
+            console.log(result.user)
+            props.userLoggedHandler(result.user.uid) 
+        });
+    },[]);
+
 
     function viewChangeHandler(){
         setView(prev => !prev);
@@ -87,10 +95,10 @@ function Authentication(props){
 
     async function signInWithGoogle(){
         try{
+            console.log("teste");
             await signInWithRedirect(auth,googleProvider)
-            const result = await getRedirectResult(auth);
-            props.userLoggedHandler(result.user.uid)
         }catch(e){
+            console.log(e);
             retrieveErrorDescription(e);
         }
     }
