@@ -5,7 +5,7 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDb6_sCXTjoqhxQqE5Nmb5klygfnbW6mlU",
-  authDomain: "teste-sync360.firebaseapp.com",
+  authDomain: "teste-sync360.vercel.app/",
   projectId: "teste-sync360",
   storageBucket: "teste-sync360.appspot.com",
   messagingSenderId: "370242059085",
