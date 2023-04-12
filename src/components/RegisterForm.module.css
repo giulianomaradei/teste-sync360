@@ -1,5 +1,4 @@
 .formContainer button, input,textarea {
-	color: inherit;
 	border: none;
 	font: inherit;
 	cursor: pointer;
@@ -57,7 +56,8 @@
 }
 
 .createButton{
-    background-color: #10a37f;
+    background-color: #51fa51;
+    color: black;
     cursor: pointer;
     width: 70%;
     height: fit-content;
@@ -66,7 +66,7 @@
     border-radius: 7px;
 }
 .createButton:hover{
-    background-color: #0e8c6c;
+    background-color: #54c55c;
     transition: .3s;
 }
 
