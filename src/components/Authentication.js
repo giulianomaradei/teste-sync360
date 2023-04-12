@@ -9,11 +9,15 @@ function Authentication(props){
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [confirmPassword,setConfirmPassword] = useState("");
-    const [view,setView] = useState(true);
+    const [view,setView] = useState(1);
 
     const [errorMessage,setErrorMessage] = useState("");
 
     useEffect(()=>{
+        if (window.sessionStorage.getItem('loginStarted')) {
+            setView(3);
+            window.sessionStorage.removeItem('loginStarted');
+        }
         getRedirectResult(auth).then((result)=>{
             console.log(result.user)
             props.userLoggedHandler(result.user.uid) 
@@ -22,7 +26,14 @@ function Authentication(props){
 
 
     function viewChangeHandler(){
-        setView(prev => !prev);
+        
+        setView(prev => {
+            if(prev === 1){
+                return 2
+            }else{
+                return 1;
+            }
+        });
         setEmail("");
         setPassword("");
         setConfirmPassword("");
@@ -96,6 +107,7 @@ function Authentication(props){
     async function signInWithGoogle(){
         try{
             console.log("teste");
+            window.sessionStorage.setItem('loginStarted', true);
             await signInWithRedirect(auth,googleProvider)
         }catch(e){
             console.log(e);
@@ -112,7 +124,7 @@ function Authentication(props){
     }
 
     const loginContent = 
-            <React.Fragment>
+            <div className={styles.login}> 
                 <h1>Sign In</h1>
                 <label>Email</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
@@ -123,10 +135,10 @@ function Authentication(props){
                 <div className={styles.orParagraph}> or </div>
                 <button className={styles.googleButton} onClick={signInWithGoogle}></button>
                 <button className={styles.dontHaveAccountButton} onClick={viewChangeHandler}>Don't have an account?</button>
-            </React.Fragment>
+            </div>
             
     const registerContent = 
-            <React.Fragment>
+            <div className={styles.login}> 
                 <h1>Register</h1>
                 <label>Email</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
@@ -137,14 +149,16 @@ function Authentication(props){
                 <div className={styles.errorMessage}>{errorMessage}</div>
                 <button onClick={signUp} className={styles.signInButon}> Sign Up</button>
                 <button className={styles.dontHaveAccountButton} onClick={viewChangeHandler}>Already have an account?</button>
-            </React.Fragment>
+            </div>
     ;
+
+    const waitingContent = <span class={styles.loader}></span>
 
     return(
         <div className={styles.auth}>
-            <div className={styles.login}> 
-                {view  ? loginContent : registerContent}
-            </div>
+            {view === 1 && loginContent}
+            {view === 2 && registerContent}    
+            {view === 3 && waitingContent}
         </div>
     )
 }

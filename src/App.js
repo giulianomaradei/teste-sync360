@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './Assets/Fonts/RobotoMono-Regular.ttf'
 import Profile from './components/Profile';
 import styles from './App.module.css'
@@ -23,8 +23,17 @@ function App() {
   const [address,setAddress] = useState("");
   const [imageFile,setImageFile] = useState(perfil);
 
+  useEffect(()=>{
+    const userId = localStorage.getItem('userId')
+    if(userId){
+      setLogged(true);
+      setUserLogged(userId)
+    }
+  },[])
+
   async function logoutHandler(){
     await signOut(auth);
+    localStorage.removeItem('userId');
     setLogged(false);
     setUserLogged("");
   
@@ -68,6 +77,7 @@ function App() {
 
   async function userLoggedHandler(uid){
     setUserLogged(uid);
+    localStorage.setItem('userId', uid);
     setLogged(true);
     
     const userRef = doc(db, "users", `${uid}`);
