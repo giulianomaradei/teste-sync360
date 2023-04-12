@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {auth,googleProvider} from '../Config/firebase';
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup,signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword,getRedirectResult,signInWithEmailAndPassword,signInWithRedirect,signInWithPopup,signOut} from 'firebase/auth'
 
 import styles from './Authentication.module.css'
 
@@ -87,8 +87,9 @@ function Authentication(props){
 
     async function signInWithGoogle(){
         try{
-            const userCredential = await signInWithPopup(auth,googleProvider)
-            props.userLoggedHandler(userCredential.user.uid)
+            await signInWithRedirect(auth,googleProvider)
+            const result = await getRedirectResult(auth);
+            props.userLoggedHandler(result.user.uid)
         }catch(e){
             retrieveErrorDescription(e);
         }
