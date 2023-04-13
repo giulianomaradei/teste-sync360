@@ -13,6 +13,7 @@ function Authentication(props){
 
     const [errorMessage,setErrorMessage] = useState("");
 
+
     useEffect(()=>{
         if (window.sessionStorage.getItem('loginStarted')) {
             setView(3);
@@ -127,10 +128,15 @@ function Authentication(props){
     const loginContent = 
             <div className={styles.login}> 
                 <h1>Entrar</h1>
+
                 <label>Email</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+
                 <label>Senha</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+
+                
+                
                 <div className={styles.errorMessage}>{errorMessage}</div>
                 <button onClick={signIn} className={styles.signInButon}> Entrar</button>
                 <div className={styles.orParagraph}> or </div>
