@@ -26,8 +26,7 @@ function App() {
   useEffect(()=>{
     const userId = localStorage.getItem('userId')
     if(userId){
-      setLogged(true);
-      setUserLogged(userId)
+      userLoggedHandler(userId)
     }
   },[])
 
@@ -77,8 +76,8 @@ function App() {
 
   async function userLoggedHandler(uid){
     setUserLogged(uid);
-    localStorage.setItem('userId', uid);
     setLogged(true);
+    localStorage.setItem('userId', uid);
     
     const userRef = doc(db, "users", `${uid}`);
     const userDoc = await getDoc(userRef);
