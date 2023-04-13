@@ -1,10 +1,10 @@
 # Aplicativo usuarios
 
-Projeto para o teste da empresa Sync360, foi pedido uma pagina onde existiria as informações do usuario, e um formulario para a modificação das mesmas. Nesse projeto além do que foi pedido, também existe um sistema de autenticação de usuarios, onde as informações do usuarios são salvas na nuvem, e sempre que o login for feito, as mesmas serão carregadas ao site. O login pode ser feito tanto pelo google, como por uma conta criada pelo usuario.
+Para o teste da empresa Sync360, foi solicitado o desenvolvimento de uma página contendo informações do usuário, juntamente com um formulário para a sua atualização. Além do escopo inicial, foi implementado um sistema de autenticação de usuários que armazena as informações na nuvem, de forma que as mesmas sejam carregadas ao site sempre que o login for realizado. O login pode ser feito através de uma conta Google ou uma conta criada pelo próprio usuário.
 
-As tecnologias usadas foram React e os serviços Firebase da google, a escolha pela firebase foi por motivos de infraestura, afinal serviços de hospedagem de backend gratuitos tendem a ser lentos, além da questão de velocidade também houve o meu interesse pela ferramente, na qual foi a primeira vez que a usei.
+As tecnologias utilizadas no projeto foram React e os serviços Firebase da Google. A escolha pela Firebase se deu em razão da infraestrutura oferecida, uma vez que serviços de hospedagem de backend gratuitos podem apresentar lentidão. Além disso, a ferramenta despertou meu interesse, já que foi minha primeira experiência com ela.
 
-Na descrição do projeto existe o link para acessar o projeto.
+O link para acessar o projeto encontra-se disponível na descrição do mesmo.
 
 ## Available Scripts
 
